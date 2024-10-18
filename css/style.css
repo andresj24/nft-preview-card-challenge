@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-bg: hsl(217, 54%, 11%);
+    --very-dark-blue-main: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*1rem = 10px*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    background-color: var(--very-dark-blue-bg);
+}
+
+.wrapper {
+    max-width: 31.5rem;
+    padding: 2rem;
+    background-color: var(--very-dark-blue-main);
+    border-radius: 15px;
+    box-shadow: 5px 13px 3px 8px rgba(19,21,36,.25);
+}
+
+.image {
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.image-hover {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(178, 100%, 50%, .5);
+    opacity: 0;
+}
+
+.image .image-hover img {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image .image-hover:hover {
+    opacity: 1;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.wrapper a {
+    text-decoration: none;
+}
+
+.wrapper a h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    color: var(--white);
+}
+
+.wrapper a h1:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.wrapper p {
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--soft-blue);
+    margin: 0;
+}
+
+.wrapper .info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.wrapper .info .price,
+.wrapper .info .date {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.wrapper .info .price p {
+    font-weight: 600;
+    color: var(--cyan);
+}
+
+.wrapper .info .date p {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.wrapper hr {
+    margin-top: 1.5rem;
+    border: .5px solid var(--very-dark-blue-line);
+}
+
+.wrapper .person {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.wrapper .person img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1.8px solid var(--white);
+    border-radius: 50%;
+}
+
+.wrapper .person p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-left: 1.5rem;
+}
+
+.wrapper .person p span {
+    color: var(--white);
+}
+
+.wrapper .person p span:hover {
+    color: var(--cyan);
+}
+
+.attribution {
+    position: absolute;
+    bottom: 10px; 
+    left: 0;
+    right: 0; 
+    font-size: 11px; 
+    text-align: center; 
+}
+    
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        max-width: 90%; 
+    }
+}
